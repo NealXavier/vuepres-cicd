@@ -10,7 +10,6 @@ on:
 jobs:
   # 建立一个名为 build 的job
   build:
-   # 在最新的ubuntu环境工作
    runs-on: ubuntu-latest
 
    # 开始设置构建步骤
