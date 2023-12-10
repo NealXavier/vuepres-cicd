@@ -19,7 +19,7 @@ jobs:
 
    # 命令这个步骤为构建Build
    - name: Build
-     run: npm install && npm run build
+     run: npm install && npm run docs:build
 
    # 命令这个任务发布Deploy
    - name: Deploy
