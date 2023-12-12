@@ -14,7 +14,7 @@ jobs:
 
    strategy:
     matrix:
-     node-version: ['14.x', '16.x', '18.x']
+     node-version: ['14.x']
 
    # 开始设置构建步骤
    steps:
@@ -24,6 +24,8 @@ jobs:
    # 命令这个步骤为构建Build
    - name: Build
      run: npm install && npm run docs:build
+     with:
+       node-version: ${{ matrix.node-version }}
 
    # 命令这个任务发布Deploy
    - name: Deploy
