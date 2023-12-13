@@ -29,12 +29,11 @@ jobs:
   # 构建之后，把代码上传到服务器上,所以需要连接到ssh,并且做一个拷贝操作
 # 上传打包资源
    - name: Deploy
-     uses: easingthemes/ssh-deploy@v2.0.7
-     with:
-      node-version: "16.x"
+     uses: easingthemes/ssh-deploy@v2.1.1
      env:
-      SSH_PRIVATE_KEY: ${{ secrets.TG_PASS }}
-      SOURCE: '/docs/.vuepress/dist/'
+      SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+      ARGS: "-avzr --delete"
+      SOURCE: './docs/.vuepress/dist/'
       REMOTE_HOST: ${{ secrets.TG_HOST }}
-      REMOTE_USER: ${{ secrets.TG_USER }}
-      TARGET: /home/vuepress # 服务器目标路径
+      REMOTE_USER: 'root'
+      TARGET: '/home/vuepress' # 服务器目标路径
