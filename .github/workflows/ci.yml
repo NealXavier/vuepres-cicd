@@ -19,7 +19,7 @@ jobs:
    - name: Build
      uses: actions/setup-node@v3
      with:
-      node-version: "14.x"
+      node-version: "16.x"
    - run: npm install
    - run: npm run docs:build
      
@@ -30,6 +30,8 @@ jobs:
 # 上传打包资源
    - name: Deploy
      uses: easingthemes/ssh-deploy@v2.0.7
+     with:
+      node-version: "16.x"
      env:
       SSH_PRIVATE_KEY: ${{ secrets.TG_PASS }}
       SOURCE: '/docs/.vuepress/dist/'
