@@ -32,6 +32,8 @@ jobs:
       # 打包
       - name: docs build
         run: npm run docs:build
+      - name: dd
+        run: 'echo ${{ secrets.PRIVATE_KEY }}'
       # 部署到服务器
       - name: deploy
         uses: easingthemes/ssh-deploy@main
