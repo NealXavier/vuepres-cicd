@@ -28,7 +28,7 @@ jobs:
           node-version: 16.x
       # 安装依赖
       - name: npm install
-        run: npm install
+        run: npm install CI=true
       # 打包
       - name: docs build
         run: npm run docs:build
